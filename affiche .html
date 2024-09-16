@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiche</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .affiche {
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        .affiche img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .articles {
+            display: none; /* Masque les articles initialement */
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .article {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+        .article img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .order-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="affiche">
+    <h1>A.M Turky et divers</h1>
+    <img src="bote.jpg" alt="Boutique Image">
+    <p>Bienvenue chez A.M Turquie et divers Lubumbashi. Nous sommes une boutique d'habillement en ligne, nous livrons partout à Lubumbashi.</p>
+    <p><a href="#" id="showArticles">Voir les articles</a></p>
+    <div class="articles" id="articles">
+        <div class="article">
+            <img src="Gucci.jpg" alt="Article 1 Image">
+            <p>Article 1 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <div class="article">
+            <img src="damele.jpg" alt="Article 2 Image">
+            <p>Article 2 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <div class="article">
+            <img src="cuire.jpg" alt="Article 3 Image">
+            <p>Article 3 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <div class="article">
+            <img src="par-dessus.jpg" alt="Article 4 Image">
+            <p>Article 4 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <div class="article">
+            <img src="mauve.jpg" alt="Article 5 Image">
+            <p>Article 5 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <div class="article">
+            <img src="y.jpg" alt="Article 6 Image">
+            <p>Article 6 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <!-- Nouveaux articles ajoutés -->
+        <div class="article">
+            <img src="A.jpg" alt="Article 7 Image">
+            <p>Article 7 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <div class="article">
+            <img src="B.jpg" alt="Article 8 Image">
+            <p>Article 8 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+        <div class="article">
+            <img src="Sk.jpg" alt="Article 9 Image">
+            <p>Article 9 Description</p>
+            <button class="order-button">Commander</button>
+    		        </div>
+        <div class="article">
+            <img src="A.jpg" alt="Article 10 Image">
+            <p>Article 10 Description</p>
+            <button class="order-button">Commander</button>
+        </div>
+    </div>
+    <p>Contactez-nous par email à : <a href="mailto:contact@amturkydivers.com">contact@amturkydivers.com</a></p>
+</div>
+
+<script>
+    document.getElementById('showArticles').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+        var articlesSection = document.getElementById('articles');
+        articlesSection.style.display = articlesSection.style.display === 'none' ? 'grid' : 'none'; // Bascule l'affichage
+    });
+
+    // Ajout d'une fonctionnalité de commande
+    const orderButtons = document.querySelectorAll('.order-button');
+    orderButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Commande effectuée avec succès !');
+        });
+    });
+</script>
+
+</body>
+</html>
